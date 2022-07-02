@@ -1,0 +1,7 @@
+/node_modules
+
+/info.txt
+
+/truffle/truffle-config.js
+
+/client/node_modules
