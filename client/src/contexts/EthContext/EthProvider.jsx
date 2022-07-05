@@ -2,6 +2,7 @@ import React, { useReducer, useCallback, useEffect } from "react";
 import Web3 from "web3";
 import EthContext from "./EthContext";
 import { reducer, actions, initialState } from "./state";
+import {Biconomy} from "@biconomy/mexa";
 
 function EthProvider({ children }) {
   const [state, dispatch] = useReducer(reducer, initialState);
@@ -9,7 +10,12 @@ function EthProvider({ children }) {
   const init = useCallback(
     async artifact => {
       if (artifact) {
-        const web3 = new Web3(Web3.givenProvider || "ws://localhost:8545");
+       // const web3 = new Web3(Web3.givenProvider || "ws://localhost:8545");
+
+        const biconomy = new Biconomy(Web3.givenProvider || "ws://localhost:8545",{apiKey:'2aEbeEA53.7b61dcef-96c3-4dea-8476-2ce7abea2dd6', debug: true});
+        const web3 = new Web3(biconomy);
+
+
         const accounts = await web3.eth.requestAccounts();
         const networkID = await web3.eth.net.getId();
         const { abi } = artifact;

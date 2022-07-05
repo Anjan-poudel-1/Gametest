@@ -9,6 +9,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@opengsn/contracts": "^2.2.0",
+    "@opengsn/provider": "^2.2.0",
     "@truffle/hdwallet-provider": "^2.0.9"
+  },
+  "devDependencies": {
+    "truffle-plugin-verify": "^0.5.26"
   }
 }

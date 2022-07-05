@@ -19,7 +19,7 @@ function App() {
       <div id="App" style={{padding:"3rem",fontSize:"16px"}}>
         {
           !state.contract?
-          "Get a wallet... connect to rinkeby network":
+          "Get a wallet... connect to kovan network":
         
           <>
             <Header account = {state.accounts}/>
